@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Visitor Count</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    </style>
+    
+</head>
+<body>
+    <h1>Live Visitor Count</h1>
+    <p>Current Visitors: <span id="visitor-count">0</span></p>
+
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const visitorCountElement = document.getElementById('visitor-count');
+
+    // Function to update visitor count
+    const updateVisitorCount = () => {
+        let visitorCount = parseInt(localStorage.getItem('visitorCount') || '1');
+        visitorCount += 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        visitorCountElement.textContent = visitorCount;
+    };
+
+    // Function to decrease visitor count
+    const decreaseVisitorCount = () => {
+        let visitorCount = parseInt(localStorage.getItem('visitorCount') || '1');
+        if (visitorCount > 1) {
+            visitorCount -= 1;
+            localStorage.setItem('visitorCount', visitorCount);
+            visitorCountElement.textContent = visitorCount;
+        }
+    };
+
+    // Check if this is a new session
+    if (!sessionStorage.getItem('hasVisited')) {
+        // This is a new session
+        updateVisitorCount();
+        sessionStorage.setItem('hasVisited', 'true');
+    } else {
+        // Update the display count without incrementing
+        visitorCountElement.textContent = localStorage.getItem('visitorCount');
+    }
+
+    // Decrease count when the tab or window is closed
+    window.addEventListener('beforeunload', decreaseVisitorCount);
+});
+
+
+    </script>
+</body>
+</html>

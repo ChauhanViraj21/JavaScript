@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color:rgb(133, 139, 170);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Stop Watch</a>
+        </div>
+    </nav>
+
+    <section class="container mt-5">
+       
+        <div class="row">
+            <div class="col-3 m-auto" >
+              <div class="card bg-dark">
+                <div class="card-body text-white text-center">
+
+                    <h2>
+                        <div id="fr">
+                    <span id="min">00 </span>
+                    <span>:</span>
+                    <span id="sec">00</span>
+                    <span>:</span>
+                    <span id="msec">00</span></div></h2>
+
+                    <div class="mt-4">
+                    <button class="btn btn-success " id="btn-start">Start</button>
+                    <button class="btn btn-danger" id="btn-stop">Stop</button>
+                    <button class="btn btn-warning"id ="btn-restart">Reset</button>
+
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        let mSecTag=document.getElementById('msec');
+        let secTag=document.getElementById('sec');
+        let minTag=document.getElementById('min');
+
+        let BtnStart=document.getElementById('btn-start');
+        let Btnstop=document.getElementById('btn-stop');
+        let BtnRestart=document.getElementById('btn-restart');
+        let flag=false;
+
+       let sec=0;
+       let msec=0;
+       let min=0;
+
+
+        function timer()
+        {
+            msec=msec+1;
+            if(msec==100)
+            {
+                sec=sec+1;
+                msec=0;
+                if(sec==60)
+                {
+                    min=min+1;
+                    sec=0;
+                    
+                }
+            }
+            mSecTag.innerText=concatinate(msec);
+            secTag.innerText=concatinate(sec);
+            minTag.innerText=concatinate(min);
+        }
+
+        let interval=null;
+
+        BtnStart.addEventListener('click',function(){
+            if(!flag)
+            {
+            interval= setInterval(timer,10);
+            flag=true;
+            }
+        });
+        
+        Btnstop.addEventListener('click',function(){
+          
+            if(flag)
+            {
+            clearInterval(interval);
+            flag=false;
+            }
+        });
+        
+        BtnRestart.addEventListener('click',function()
+    {
+        clearInterval(interval);
+        flag=false;
+            sec=0;
+            msec=0;
+            min=0;
+
+            secTag.innerText="00";
+            mSecTag.innerText="00";
+            minTag.innerText="00";
+    })
+
+        function concatinate(time)
+        {
+            if(time<=9) return "0"+time;
+            
+            else return time;
+        }
+        
+    </script>
+</body> 
+</html>

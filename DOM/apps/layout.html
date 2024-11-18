@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="layout.css">       
+    
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand"><i style="color: red;" class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+    </nav>
+    
+    <section class="container mt-4 backimg">
+        <div class="row">
+            <div class="col-5 m-auto">
+                <div class="card mt-5 bg-warningg">
+                    <div class="card-header bg-warningg">
+                        <img id="im" src="../../Form/image/im.jpg" alt="" class="img-fluid">
+                    </div>
+                    <div class="card-body text-center bg-warningg">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Likes</h2>
+                                <h6 id="like-count"></h6>
+                                <button id="like" class="btn btn-success">Likes <i class="fa fa-thumbs-up"></i></button>
+                            </div>
+                            <div class="col-6">
+                                <h2>DisLikes</h2>
+                                <h6 id="dislike-count"></h6>
+                                <button id="dislike" class="btn btn-danger">DisLikes <i class="fa fa-thumbs-down"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center bg-warningg">
+                        <h1>Total:- <span id="total-count"></span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+<footer style="margin-bottom:500px;"></footer>
+<!-- Script Code -->
+ <script>
+   let dislplayLike=document.querySelector('#like-count');
+   let displayDislike=document.getElementById('dislike-count');
+   let likeBtn=document.getElementById('like');
+   let dislikeBtn =document.getElementById('dislike');
+   let totallike= document.getElementById('total-count');
+   
+
+   let Likestorage=Number(localStorage.getItem('likescount')?localStorage.getItem('likescount'):0);
+   let Dislikestorage=Number(localStorage.getItem('dislikescount')?localStorage.getItem('dislikescount'):0);
+   let Totalstorge=Number(localStorage.getItem('totalcount')?localStorage.getItem('totalcount'):0);
+
+    dislplayLike.innerText=Likestorage;
+    displayDislike.innerText=Dislikestorage;
+    totallike.innerText=(Likestorage+Dislikestorage);
+
+   likeBtn.addEventListener('click',function(){
+                                                Likestorage++;
+                                                localStorage.setItem('likescount',Likestorage);
+                                                dislplayLike.innerText=localStorage.getItem('likescount');
+                                                totallike.innerText=(Likestorage+Dislikestorage);
+                                            });
+                                        
+    dislikeBtn.addEventListener('click',function(){
+                                                Dislikestorage++;
+                                                localStorage.setItem('dislikescount',Dislikestorage);
+                                                displayDislike.innerText=localStorage.getItem('dislikescount');
+                                                totallike.innerText=(Likestorage+Dislikestorage);
+
+    })
+
+   
+
+ </script>
+</body>
+</html>

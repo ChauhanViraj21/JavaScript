@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Document</title>
+   
+    <style>
+        
+        div
+        {
+            background-color: rgb(120, 216, 216);
+            text-align: center;
+            border-radius: 10px;
+
+        }
+        button
+        {   margin:10px 20px;
+            padding: 5px;
+            border: none;
+            text-decoration: none;
+            width: 100px;
+            border: 3px solid rgb(45, 66, 53);
+            border-radius: 10px ;
+            color: rgba(22, 19, 9,0.9);
+        
+        }
+        button:hover
+        {
+            cursor: pointer;
+        }
+        h1
+        {
+            margin: top 10px;
+            margin-bottom: 2px;
+            padding: 7px;
+        }
+    </style> 
+</head>
+<body>
+    <div>
+        <h1 id="one"> </h1>
+        <button id="b1"  onclick="helloMsg()">Click Here </button>
+        <button id="b2"  >Click Here</button>
+        <button id="b3" >Click Here</button>
+ </div>
+ <script>
+
+    let h1Tag=document.getElementById('one');
+    function helloMsg()
+    {
+        h1Tag.textContent="Hello";
+    }
+
+    let hiBtn=document.querySelector('#b2');
+    hiBtn.onclick=function()
+    {
+        h1Tag.textContent="HI ";
+    }
+
+    let byeBtn=document.getElementById('b3');
+    byeBtn.addEventListener('click',function(){
+        h1Tag.textContent="bye";
+    })
+ </script>
+           
+        
+       
+        
+    </script>
+</body>
+</html>

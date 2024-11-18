@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display:none   ;
+        }
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-dark bg-danger">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">Zomato</a>
+                
+                <button class="btn btn-success" id="btn-show-card">LOGIN</button>
+                
+            </div>
+        </nav>
+    <section class="container-fluid mt-4">
+        <h2>YOU DON'T WANT TO MAKE FOOD THEN ORDER THE FOOD😜😜</h2>
+        <p>Lorem adipisicing elit. Distinctio accusantium nulla quo ad adipisci accusamus. Ut cupiditate excepturi voluptatem tenetur nisi vel illo numquam similique, necessitatibus pariatur possimus quibusdam consequuntur distinctio repellendus? Nihil similique, velit eaque vel at fugit. Corrupti vel corporis, adipisci perferendis non culpa praesentium ea? Cumque, debitis.</p>
+        <button class="btn btn-danger">Order Now</button>
+    </section>
+     
+   
+    <section class="container mt-2" >
+ <div class="row">
+        <div class="col-5 hidden m-auto" id="card-ele">
+            <div class="card">
+                <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
+                    <h2>Login Here</h2> <span class=" fa-solid fa-xmark align-text-bottom" id="close-card"></span>
+                </div>
+                <div class="card-body">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Enter Email/Username" class="form-control" value="" id="usn">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="password" placeholder="Enter Email/Username" class="form-control" value="" id="pw">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="submit" class="btn btn-danger">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+        <script>
+            let formEle=document.getElementById('card-ele');
+            let closeBtn = document.getElementById('close-card');
+            let CardBtn=document.getElementById('btn-show-card');
+
+            CardBtn.addEventListener('click',function()
+        { 
+            formEle.classList.remove('hidden');
+        });
+
+            closeBtn.addEventListener('click',closeform);
+           
+            function closeform(){
+                formEle.classList.add('hidden');
+            }
+
+            let logInBtn=document.querySelector('#login-btn');
+    let cardEle=document.querySelector('#card-el');
+
+
+
+//Escape Key
+
+document.addEventListener('keydown',function(e)
+{
+    if(e.key==="Escape" && !formEle.classList.contains('hidden'))
+    {
+        closeform();
+    }
+})
+        </script>
+</body>
+</html>

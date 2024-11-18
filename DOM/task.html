@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Document</title>
+    <style>
+        div
+        {
+            background-color: aqua;
+            text-align: center;
+
+        }
+        button
+        {   margin:10px 20px;
+            padding: 5px;
+            border: none;
+            text-decoration: none;
+            width: 100px;
+        ;
+        }
+        button:hover
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="one"> </h1>
+        <button onclick="javaDisplay()">JAVA</button>
+        <button onclick="javascriptDisplay()">JAVASCRIPT</button>
+        <button onclick="pythonDisplay()">PYTHON</button>
+
+    </div>
+    <script>
+        function javaDisplay()
+        {
+            let javatag=document.getElementById('one');
+            javatag.textContent="I LOVE JAVA";
+        }
+        function javascriptDisplay()
+        {
+            let javatag=document.getElementById('one');
+            javatag.textContent="I LOVE JAVASCRIPT";
+        }
+        function pythonDisplay()
+        {
+            let javatag=document.getElementById('one');
+            javatag.textContent="I LOVE PYTHON";
+        }
+        
+    </script>
+</body>
+</html>

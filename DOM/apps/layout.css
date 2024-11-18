@@ -1,0 +1,26 @@
+img 
+        {
+            height: 330px !important;
+            width:100%;
+        }
+        .bg-warningg
+        {
+            background-color:rgba(165, 174, 184,0.4)!important;
+        }
+        #im
+        {
+            border-radius: 10px;
+        }
+        .backimg
+        {
+            background-image: url(../../Form/image/im.jpg);
+            background-size:cover;
+        }
+        section{
+            height:800px;
+            border-radius: 15px;
+        }
+        nav
+        {
+            background-color: rgb(165, 174, 184);
+        }

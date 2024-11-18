@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let p = new Promise(function (success, failure) {
+            let fetchData = true;
+            if (fetchData) {
+                success([1, 2, 3, 4, 5]);
+            }
+            else {
+                failure("check the code")
+            }
+        });
+
+        p.then(function (data) {
+            console.log(data);
+        });
+        p.catch(function (err) {
+            console.log(err);
+        })
+
+
+
+       // p.then((data)=>{console.log(data);},function(err){console.error(err);});
+      //  p.then((data)=>{console.log(data);},null);
+        p.then(null,function(err){console.error(err);});
+
+
+    </script>
+</body>
+
+</html>

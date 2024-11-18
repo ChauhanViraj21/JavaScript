@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+
+    <style>
+        #usen-txt:focus {
+            box-shadow: 2px white;
+        }
+
+        .hidden
+{
+    display:none;
+}
+.deposit
+{
+    color:limegreen;
+}
+.withdrawl
+{
+    color:red;
+}
+.h7
+{
+
+    font-size:25px;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid ">
+            <a href="Bank.html" class="navbar-brand">
+                <i class="fa-solid fa-building-columns" style="color: aqua;"></i>
+                <span class="ms-2 text-white">V Bank</span>
+            </a>
+            <form class="d-flex justify-content-end" action="http://127.0.0.1:5500/Tasks/Bank.html" id="login-form">
+                <div><input type="text" placeholder="Enter Username" class="form-control" id="usen-txt" value=""></div>
+                <div><input type="text" placeholder="Enter pin" class="form-control ms-2" id="pin-txt" value=""></div>
+                <div class="ms-2"><input type="submit" id="login-user-btn" class="btn btn-outline-light ms-2"> </div>
+            </form>
+
+        </div>
+    </nav>
+
+    <h2 class="text-center mt-2" id="displayName">Please Login First</h2>
+
+    <section class="mt-4 hidden" id="btns">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-3 d-grid">
+                    <button class="btn btn-dark" id="show-Transaction"> Display Transaction</button>
+                </div>
+                <div class="col-3 d-grid">
+                    <button class="btn btn-dark" id="btn-balance"> Check Balance</button>
+                </div>
+                <div class="col-3 d-grid">
+                    <button class="btn btn-dark" id="btn-dep">Deposite</button>
+                </div>
+                <div class="col-3 d-grid">
+                    <button class="btn btn-dark" id="btn-with">Withdrawls</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-3 ms-1">
+                <div class="card mt-4 hidden" id="card-trans">
+                    <div class="card-header bg-dark text-white text-center">
+                        Transaction History
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <ul class="list-group">
+                                <div id="display">
+
+                                </div>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="card mt-4 hidden" id="card-tot">
+                    <div class="card-header bg-dark text-white text-center">
+                        Total Balance
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <ul class="list-group">
+                                <div class="text-center" id="total-bal"></div>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="Bank.js">
+
+    </script>
+</body>
+
+</html>

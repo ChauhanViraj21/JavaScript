@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Page</title>
+    <script>
+       
+          main();
+        function main()
+        {
+            let num_1=10;
+            let num_2=20;
+            let output = calc(num_1,num_2,add);
+            console.log("res = "+output);
+            let output1=calc(num_1,num_2,mul);
+            console.log("res = "+output1);
+
+        }
+        function calc(n1,n2,type)
+        {
+            let res=0;
+            res=type(n1,n2);
+            return res;
+        }
+        function add(a,b){
+            return a+b;
+        }
+        function mul(a,b)
+        {
+          return a*b;
+          
+        }
+    </script>
+</head>
+<body>
+    <h1>Hello world</h1>
+</body>
+</html>

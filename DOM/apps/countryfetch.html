@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: rgb(26, 31, 38);
+        }
+        
+        img 
+        {
+            width: 100% !important;
+            height:180px !important;
+            border-radius:30px;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index:10;
+            background-color: rgb(47, 55, 69) !important;
+        }
+        .abc
+        {
+            z-index:2;
+        }
+        .card
+        {
+            border-radius: 30px;
+            border: none;
+            background-color: rgb(47, 55, 69) !important;
+   
+        }
+        .card-header
+        {
+            background-color: rgb(47, 55, 69) !important;
+            /* border: 2px black solid; */
+            border-radius: 30px !important;
+            border: none;
+            
+        }
+        .card-body
+        {    background-color: rgb(47, 55, 69) !important;
+            border-radius: 30px !important;
+            border: none;
+          
+            color:white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark text-center">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Country Information</a>
+        </div>
+    </nav>
+    <section class="container-fluid mt-4 ">
+        <h2 class="text-white">We provide information of country </h2>
+        <p class="text-white">Lorem adipisicing elit. Distinctio accusantium nulla quo ad adipisci accusamus. Ut cupiditate excepturi
+            voluptatem tenetur nisi vel illo numquam similique, necessitatibus pariatur possimus quibusdam consequuntur
+            distinctio repellendus? Nihil similique, velit eaque vel at fugit. Corrupti vel corporis, adipisci
+            perferendis non culpa praesentium ea? Cumque, debitis.</p>
+    </section>
+
+
+    <section class="container-fluid mt-2" class="abc">
+        <div class="row mb-2" id="display">
+        </div>
+    </section>
+
+<script src="countryfetch.js">
+</script>
+</body>
+
+</html>

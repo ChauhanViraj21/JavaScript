@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-danger">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Zomato</a>
+        </div>
+    </nav>
+ 
+     
+   
+ <section class="container mt-2" >
+ <div class="row">
+        <div class="col-5 m-auto">
+            <div class="card " >
+                <div class="card-header bg-danger text-white" >
+                    <h2 class="text-white">Login Here</h2>
+                </div>
+                <div class="card-body">
+                    <form id="login-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Enter Email/Username" class="form-control" value="" id="usn">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="password" placeholder="Enter password" class="form-control" value="" id="pw">
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="submit" class="btn btn-danger">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+        <script>
+            let formEle=document.getElementById('login-form');
+            let usenEle=document.getElementById('usn');
+            let pwEle=document.getElementById('pw');
+
+            formEle.addEventListener('submit',function(event)
+             {
+                event.preventDefault();
+                let Usernam=usenEle.value;
+                let passwor=pwEle.value;
+
+                console.log(`entered username =${Usernam}, entered password is =${passwor}`); 
+                
+                usenEle.value ="";
+                pwEle.value ="";
+             }
+            );
+            
+        </script>
+</body>
+</html>

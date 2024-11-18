@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <style>
+       img 
+        {
+            width: 100% !important;
+            height:250px !important;
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+        }
+        .navbar
+        {
+            z-index:10;
+        }
+        .abc
+        {
+            z-index:2;
+        }
+        
+    </style>    
+</head>
+<body>
+    <nav class="navbar navbar-dark  m-auto bg-danger ">
+        <div class="container-fluid">
+        <h2 class="text-white"><i style="color: aliceblue;" class="fa-solid fa-utensils"></i> Zomato</h2>
+        </div>
+    </nav>
+        <section class="container-fluid mt-4">
+            <h2>YOU DON'T WANT TO MAKE FOOD THEN ORDER THE FOOD😜😜</h2>
+            <p>Some delecious GUJARATI food. Make your whole joyfull and full of energetic. Ut cupiditate excepturi voluptatem tenetur nisi vel illo numquam similique, necessitatibus pariatur possimus quibusdam consequuntur distinctio repellendus? Nihil similique, velit eaque vel at fugit. Corrupti vel corporis, adipisci perferendis non culpa praesentium ea? Cumque, debitis.</p>
+            <button class="btn btn-danger">Order Now</button>
+        </section>
+
+
+         <!-- dynamic data  -->
+        <section class="container-fluid mt-2" class="abc">
+            <div class="row mb-2" id="display">
+            </div>
+        </section>
+
+
+        <!-- cart price of total cards -->
+        <div class="row justify-content-end">
+            <div class="col-4 text-center" >             
+                    <div class="card text-bg-danger"> 
+                      <h2 id="cartprice-tot"> Total price= &#8377;</h2>
+                    </div>
+            </div>
+        </div>
+
+        <footer style="margin-bottom:800px;"></footer>
+        <script src="itemsZomato.js">
+        </script>
+       
+</body>                     
+</html>

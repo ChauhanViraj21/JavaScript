@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>reursion</title>
+    <script>
+        main();
+        function main()
+        {
+            console.log("main starts");
+            m1(1);
+            console.log("main ends");
+        }
+        function m1(i)
+        {
+            console.log(i);
+            if(i==3) return;
+            m1(i+1);
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

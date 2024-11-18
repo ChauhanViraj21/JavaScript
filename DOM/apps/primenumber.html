@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        body {
+
+            background-color: rgb(83, 117, 106) !important;
+        }
+        .hidden
+        {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid d-flex">
+            <a href="#" class="navbar-brand">PRIME NUMBERS</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container">
+            <form>
+                <div class="input-group mt-3">
+                    <input type="text" placeholder="Enter Prime NUmber Range" class="form-control" id="range" value="">
+                    <button class=" btn btn-dark" id="btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="col-4 hidden m-auto" id="show">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <form>
+                        <ul class="list-group">
+                            <div id="display">
+
+                            </div>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+
+<script>
+
+    let range = document.getElementById('range');
+    let btnsub = document.getElementById('btn');
+
+    let lastnum = range.value;
+    console.log(lastnum)
+
+    let arr = []
+    function primeNumber() {
+        for (let i = 0; i <=range.value; i++) {
+            if (i <= 1) continue;
+
+            let flag = true;
+            for (let j = 2; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) arr.push(i);
+            displayTasks();
+        }
+    }
+
+primeNumber();
+
+    btnsub.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById('show').classList.remove("hidden")
+        primeNumber()
+    });
+
+
+    function displayTasks(e) {
+        
+        if (arr.length != 0) {
+            let eachTask = '';
+            for (let task of arr) {
+                eachTask += 
+                
+                `<li class="list-group-item list-group-item-dark text-black mb-1">
+                            <span>${task}</span>
+                  </li>`;
+            }
+            document.querySelector('#display').innerHTML = eachTask;
+        }
+        else {
+            document.querySelector('#display').innerHTML = '<p>Enter the range</p>';
+        }
+    }
+
+        
+
+</script>
+
+</html>

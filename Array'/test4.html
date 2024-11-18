@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>Document</title>
+<script>
+    main();
+    function main()
+    {
+        let nums=[10,20,30,40];
+        m1(nums);
+
+        let max=Math.max(...nums);
+        console.log(max  +"  max value oof array using Math.max()");
+        for(let n of nums)
+        {
+            console.log(n);
+        }
+    }
+    function m1(n)
+    {
+        n[2]=300;
+    }
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

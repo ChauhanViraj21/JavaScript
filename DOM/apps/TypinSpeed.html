@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(26, 31, 38);
+            color: white;
+        }
+
+        nav {
+            background-color: rgb(47, 55, 69) !important;
+        }
+
+        button {
+            height: 69px;
+
+            width: 60%;
+            margin-top: 10px;
+        }
+        .form-control::placeholder
+        {   
+            color: rgba(232, 250, 118, 0.548) !important;        }
+        .form-control::ms-input-placeholder
+        {   
+            color: rgba(232, 250, 118, 0.548) !important;
+        }
+        
+        .abc {
+            background-color: rgb(26, 31, 38);
+            color: white;
+            border-color: white;
+        }
+        textarea::placeholder{
+            color: blue;
+        }
+        textarea {
+            height: 350px !important;        
+            width: 90%;  
+            color: white !important;
+            font-size: x-large !important;
+            background-color: rgb(47, 55, 69) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid d-flex justify-content-center align-items-center text-center">
+            <a href="#" class="navbar-brand text-white fs-2">TYPING MASTER</a>
+        </div>
+    </nav>
+
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-9 mt-4 ">
+                    <div class="row m-auto ">
+                        <div class="card head abc ms-2">
+                            <h4 id="txt" class="ms-2">Button</h4>
+                        </div>
+                    </div>
+
+
+                    <div class="card-body">
+                        <div class="form-floating mt-4">
+                            <textarea id="txtarea" class=" form-control ms-2" placeholder="Select Any button And Write the text"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 mt-5">
+                    <div class="card-body text-center text-black mt-2">
+                        <button type="button" class="btn btn-outline-light" id="one">Line No.1</button>
+                        <button type="button" class="btn btn-outline-light" id="two">Line No.2</button>
+                        <button type="button" class="btn btn-outline-light" id="three">Line No.3</button>
+                        <button type="button" class="btn btn-outline-light" id="four">Line No.4</button>
+                        <button type="button" class="btn btn-outline-light" id="five">Line No.5</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="row">
+            <div class="col-3 ms-5">
+                <div class="card-body mt-4">
+                    <h2>
+                        <div>
+                            <span id="min">00 </span>
+                            <span>:</span>
+                            <span id="sec">00</span>
+                            <span>:</span>
+                            <span id="msec">00</span>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-3 ms-4">
+                <div class="card bg-secondary text-white text-center mt-5">
+                    <h2>
+                        <div>
+                            <span id="showmin">00 </span>
+                            <span>:</span>
+                            <span id="showsec">00</span>
+                            <span>:</span>
+                            <span id="showmsec">00</span>
+                        </div>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-3 ms-4">
+                <div class="card bg-secondary text-white text-center mt-5">
+                    <h2>
+                        <div>
+                            <h3 class="m-auto">Total Error <span id="err">00</span></h3>
+
+                        </div>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        //btnids
+        let btn1 = document.getElementById('one');
+        let btn2 = document.getElementById('two');
+        let btn3 = document.getElementById('three');
+        let btn4 = document.getElementById('four');
+        let btn5 = document.getElementById('five');
+
+        //textids
+        let textdisplay = document.getElementById('txt');
+        let textArea = document.getElementById('txtarea');
+
+
+        // timer ids
+        let mSecTag = document.getElementById('msec');
+        let secTag = document.getElementById('sec');
+        let minTag = document.getElementById('min');
+
+        let showmSecTag = document.getElementById('showmsec');
+        let showsecTag = document.getElementById('showsec');
+        let showminTag = document.getElementById('showmin');
+
+
+
+        let count = 0;
+
+        //set timer
+        let sec = 0;
+        let msec = 0;
+        let min = 0;
+        let flag = false;
+
+        //display text of btn
+        let displayText = "";
+
+
+
+
+
+        btn2.addEventListener('click', function () {
+            displayText = "The quick brown fox jumps over the lazy dog Pack my box with five dozen liquor jugs Amazingly few discotheques provide jukeboxes";
+            textdisplay.innerText = displayText;
+            textArea.addEventListener('input', change);
+        });
+
+        btn1.addEventListener('click', function () {
+            displayText = "This is The trial";
+            textdisplay.innerText = displayText;
+            textArea.addEventListener('input', change);
+
+        });
+
+        btn3.addEventListener('click', function () {
+            displayText = "Jinxed wizards pluck ivy from the big quilt How razorback-jumping frogs can level six piqued gymnasts";
+            textdisplay.innerText = displayText;
+            textArea.addEventListener('input', change);
+        });
+
+        btn4.addEventListener('click', function () {
+            displayText = "Technology advances at an incredible pace, transforming the way we communicate, work, and entertain ourselves The curious cat prowled silently through the garden";
+            textdisplay.innerText = displayText;
+            textArea.addEventListener('input', change);
+        });
+
+        btn5.addEventListener('click', function () {
+            displayText = "In a small village, nestled in the mountains, the baker rises early to prepare fresh bread for the day ahead she enjoys a cup of hot coffee while reading the news and planning";
+            textdisplay.innerText = displayText;
+            textArea.addEventListener('input', change);
+        });
+
+        let checkedChar = 0;
+
+
+
+
+        function timer() {
+            msec = msec + 1;
+            if (msec == 100) {
+                sec = sec + 1;
+                msec = 0;
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+
+                }
+            }
+            mSecTag.innerText = concatinate(msec);
+            secTag.innerText = concatinate(sec);
+            minTag.innerText = concatinate(min);
+        }
+
+        function startTimer() {
+            intervalId = setInterval(timer, 10);
+            flag = true;
+        }
+
+        function stopTimer() {
+            clearInterval(intervalId);
+            flag = false;
+            sec = 0;
+            msec = 0;
+            min = 0;
+
+            secTag.innerText = "00";
+            mSecTag.innerText = "00";
+            minTag.innerText = "00";
+        }
+
+        function compareText() {
+
+
+            let displayText = textdisplay.innerText;
+            let inputText = textArea.value;
+          
+            if (checkedChar > inputText.length) {
+                checkedChar=inputText.length;
+              
+            //   console.log(checkedChar + "=======" + (inputText.length));
+                return;
+            }else if (checkedChar == inputText.length){
+               
+           // console.log("updating the value "+ inputText.length);
+                return;
+            }
+            for (let i = checkedChar; i < Math.min(displayText.length, inputText.length); i++) {
+
+                let displayChar = displayText.charAt(i);
+                let inputChar = inputText.charAt(i);
+
+
+                if (displayChar === inputChar) {
+                    if (checkedChar <= inputText.length)
+                        checkedChar++;
+
+                    textArea.style.borderColor = 'green';
+                    textArea.style.borderWidth = '4px';
+
+
+
+                }
+                else if (displayChar.toLowerCase() === inputChar.toLowerCase()) {
+
+                    textArea.style.borderColor = 'orange';
+                    textArea.style.borderWidth = '4px';
+                    console.log(displayChar, inputChar);
+                    break;
+
+                }
+                else {
+
+                    textArea.style.borderColor = 'red';
+                    textArea.style.borderWidth = '4px';
+                    count++;
+                    document.getElementById('err').innerText = count;
+                    break;
+                }
+            
+
+            }
+            console.log(checkedChar + "=======" + (inputText.length));
+            //  console.log("after "+(checkedChar)+"======="+(inputText.length-1));
+        }
+
+        function change() {
+            if (!flag) startTimer();
+
+            compareText();
+
+            if (displayText === textArea.value) {
+                showmSecTag.innerText = msec;
+                showminTag.innerText = min;
+                showsecTag.innerText = sec;
+               
+
+                textArea.style.borderColor = 'white';
+                textArea.value = "";
+                textArea.placeholder = "New Placeholder Text";  
+                console.log(textArea.placeholder);
+                sec = 0;
+                msec = 0;
+                min = 0;
+
+                secTag.innerText = "00";
+                mSecTag.innerText = "00";
+                minTag.innerText = "00";
+                count = 0;
+                document.getElementById('err').innerText = 0;
+
+                stopTimer();
+            }
+        }
+
+        function concatinate(time) {
+            if (time <= 9) return "0" + time;
+
+            else return time;
+        }
+
+    </script>
+
+
+
+</body>
+
+</html>

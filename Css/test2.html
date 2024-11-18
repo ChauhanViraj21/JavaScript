@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #header>h1>span
+        {
+            color: red;
+        }
+        #header span
+        {
+            background-color: aqua;
+            border-radius: 20px;
+        }
+        #header>h1+h2
+        {
+            color: blue;
+        }
+        #header>h1~h3
+        {
+            color: rgb(28, 189, 63);
+        }
+        h1[align="left"]        /* Attribute selector */
+        {
+            color: burlywood;
+        }
+            
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>header one
+            <span>Span Tag</span>
+            
+        </h1>
+        
+        <h2>header two</h2>
+        <h3>header three</h3>
+    </div>
+    <div id="main-section">
+        <h2>main section two</h2>
+        <h3>main section three</h3>
+    </div>
+    <div id="footer">
+        <h1 align="left">footer one
+            <span>Span Tag</span>
+        </h1>
+        <h2>footer two</h2>
+        <h3>footer three</h3>
+    </div>
+
+</body>
+</html>

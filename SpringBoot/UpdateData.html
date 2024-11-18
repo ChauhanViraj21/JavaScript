@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Form</title>
+    <link rel="stylesheet" href="../../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">Account Management</a>
+        </div>
+    </nav>
+    <section class="container mt-2" style="position: sticky; top: 0;">
+        <div class="row">
+            <div class="col-4 hidden m-auto" id="card-ele">
+                <div class="card mt-4">
+                    <div class="card-header text-bg-dark">
+                        <h3>Update Account Data</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <form id="dataForm">
+                            <div class="form-group mt-3">
+                                <input type="text" class="form-control" placeholder="Enter Name" id="name" name="name" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="number" class="form-control" placeholder="Enter Age" id="age" name="age" required>
+                            </div>
+                            <div class="form-group mt-3">
+                                <input type="number" class="form-control" id="balance" placeholder="Enter Balance" name="balance" required>
+                            </div>
+                            <div class="form-group mt-4">
+                                <button type="button" class="btn btn-dark" onclick="updateData()">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const empId = urlParams.get('id');
+        console.log(empId);
+
+        fetch(`http://localhost:8080/account/findbyid/${empId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+
+                
+                if (data) {
+                    document.getElementById("name").value = data.name;
+                    document.getElementById("age").value = data.age;
+                    document.getElementById("balance").value = data.balance;
+                } else {
+                    alert("No data found for this ID");
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert("An error occurred while fetching data.");
+            });
+
+        function updateData() {
+            const name = document.getElementById("name").value;
+            const age = parseInt(document.getElementById("age").value, 10);
+            const balance = parseFloat(document.getElementById("balance").value);
+
+            const data = {
+                name: name,
+                age: age,
+                balance: balance
+            };
+
+            fetch('http://localhost:8080/account/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert("Data Updated successfully!");
+                    window.location.href = 'AccountDtail.html';
+                    
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert("An error occurred while submitting data.");
+                });
+            console.log({ name, age, balance });
+        }
+    </script>
+
+</body>
+</html>

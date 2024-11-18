@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+    body
+    {
+        margin: 0px;
+        background-color: beige;
+    }
+    
+        #navbar 
+        {
+            background-color: rgb(241, 237, 161);
+            text-align: center;
+            padding:15px 0px 0px  0px;
+            border-radius: 10px; 
+        }
+        #navbar>a
+        {
+            display:inline-block;
+            text-decoration: none;
+            color: rgb(94, 18, 165);
+            background-color:azure;
+            padding:15px 10px;
+            margin:10px 20px ;
+            border-radius: 0px 0px 20px 20px;
+            border-bottom: 5px solid purple;
+            width: 110px
+        }
+        #navbar>a:hover
+        {
+            text-decoration: underline;
+            box-shadow: 0 0 20px cornflowerblue;
+            background-color: aqua; 
+        }
+        .tebox:hover
+        {
+            box-shadow: 0 0 20px lightskyblue;
+            
+        }
+        #reg-form
+        {
+            border-right:3px solid black;
+            border-left:3px solid black;
+            padding:20px;
+            width:350px;
+            margin:50px auto;
+            text-align:center;
+            border-radius:30px;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="password"]
+        {
+            margin-top:30px;
+            border:none;
+            outline:none;
+            border-bottom:1px solid black;
+            padding: 7px 0px ;
+            border-radius: 20px;
+            width: 200px;
+        }
+        .form-group input[type="submit"]
+        {
+            margin-top:30px;
+            width:175px;
+            border:none;
+            background:none;
+            padding:7px 15px;
+            background-color:rgb(61, 193, 240);
+            color:purple;
+            border-radius:10px;
+        }
+        
+        .form-group input[type="submit"]:hover 
+        {
+            cursor:pointer;
+            box-shadow:0 0 10px cornflowerblue;
+        }
+        
+        ::placeholder
+        {
+            color:rgb(72, 72, 222);
+            text-align: center;
+            
+        }
+        #icon
+        {
+            font-size:50px;
+            
+        }
+        .abc
+        {
+            border:15px solid skyblue;
+            border-radius:100%;
+            box-shadow:0 0 10px black;
+        }
+ 
+    </style>
+    <script src="https://kit.fontawesome.com/90481bf7e0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../FontAwsome/fontawesome-free-6.5.2-web/css/all.css">
+
+
+</head>
+<body>
+    <div id="navbar">
+        <a href="#"><span class="fa fa-home"></span>home</a>
+        <a href="#"><span class="fa fa-newspaper"></span>Updates</a>
+        <a href="#"><span class="fa fa-book"></span>Course</a>
+        <a href="#"><span class="fa fa-id-badge"></span>About</a>
+        <a href="#"><span class="fa fa-phone"></span>Contact Us</a>
+
+    </div>
+
+    <div id="reg-form">
+        <div id="icon">
+            <i class="fa fa-user-circle abc"></i>
+        </div>
+        <form>
+            <div class="form-group">
+              
+                <input type="text" class="tebox" placeholder="Enter Username">
+            </div>
+            <div class="form-group">
+                <input type="text" class=" tebox" placeholder="Enter Email">
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-face-awesome"></i>
+                <input type="password" class="tebox" placeholder="Enter Password">
+            </div>
+            <div class="form-group">
+                <input type="password" class="tebox" placeholder="Enter Confirm Password">
+            </div>
+            <div class="form-group">
+                <input type="submit">
+            </div>
+        </form>
+    </div>  
+    
+   
+</body>
+
+</html>
+
+</body>
+</html>

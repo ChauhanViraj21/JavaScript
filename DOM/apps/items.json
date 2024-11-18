@@ -1,0 +1,33 @@
+{
+    "itemsArray":[
+        {
+            "id":101,
+            "img":"../apps/imges/jalebifafda.jpeg",
+            "name":"Jalebi Fafda",
+            "price":60,
+            "qty":1
+        },
+        {
+            "id":102,
+            "img":"../apps/imges/khandvi.jpeg",
+            "name":"Khandvi",
+            "price":60,
+            "qty":1
+        },
+        {
+            "id":103,
+            "img":"../apps/imges/dhokla.jpeg",
+            "name":"Dhokla",
+            "price":40,
+            "qty":1
+        },
+        {
+            "id":104,
+            "img":"../apps/imges/thepla.jpeg",
+            "name":"Thepla",
+            "price":50,
+            "qty":1
+        }
+    
+    ]
+}

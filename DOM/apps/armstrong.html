@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function main(){
+            let a =189;
+            let b =a;
+            let count = 0;
+            let sum = 0;
+            while(a>0){
+                count++;
+                a = Math.trunc(a/10);
+            }
+            a=b;
+            while(a>0){
+                let n=a%10;
+                let prod=1;
+                for(let i=1;i<=count;i++){
+                    prod = prod*n;
+                }
+                sum = prod+sum;
+                a = Math.trunc(a/10);
+            }
+            if(sum==b) console.log("Armstrong Num");
+            else console.log("Not a armstrong num");
+
+        }
+        main();
+    </script>
+</body>
+</html>

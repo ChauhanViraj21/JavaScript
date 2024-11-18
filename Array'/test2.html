@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        main();
+    function main()
+    {
+        let birthYear=[1999,1998,2000,1997,2002]
+        let age_1=[];
+
+        for(let year of birthYear)
+        {
+            let age=2024-year;
+            age_1.push(age);
+        }
+        console.log(age_1);
+
+        let age_2=birthYear.map(function(year){
+            age = 2024-year;
+            return age;
+        });
+        console.log(age_2);
+        
+    }
+
+   
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

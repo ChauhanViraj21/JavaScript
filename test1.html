@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Info</title>
+    <style>
+        #patient-info {
+            margin-top: 20px;
+        }
+        img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient Information</h1>
+
+    <!-- Input field for patient ID -->
+    <label for="patientId">Enter Patient ID: </label>
+    <input type="number" id="patientId" name="patientId" required>
+    <button onclick="fetchPatientData()">Fetch Patient</button>
+
+    <div id="patient-info">
+        <h2>Patient Details:</h2>
+        <p><strong>Name: </strong><span id="patient-name"></span></p>
+        <p><strong>Age: </strong><span id="patient-age"></span></p>
+        <p><strong>Image:</strong></p>
+        <img id="patient-image" src="" alt="Patient Image">
+    </div>
+
+    <script>
+        // Function to fetch patient data by ID
+        function fetchPatientData() {
+            var patientId = document.getElementById("patientId").value;
+            if (!patientId) {
+                alert("Please enter a valid patient ID.");
+                return;
+            }
+
+            fetch(`http://localhost:8080/patients/${patientId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data) {
+                        // Update the UI with the patient's details
+                        document.getElementById("patient-name").innerText = data.name;
+                        document.getElementById("patient-age").innerText = data.age;
+                        if (data.image) {
+                            // If the image exists, decode it from Base64 and display
+                            document.getElementById("patient-image").src = "data:image/png;base64," + data.image;
+                        } else {
+                            document.getElementById("patient-image").alt = "No image available";
+                        }
+                    } else {
+                        alert("Patient not found.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching patient data:", error);
+                    alert("An error occurred while fetching patient data.");
+                });
+        }
+    </script>
+
+</body>
+</html>

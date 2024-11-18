@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <title>Document</title>
+    <style>
+        div
+        {
+            background-color: rgb(27, 115, 115);
+            text-align: center;
+            border-radius: 10px;
+
+        }
+        button
+        {   margin:10px 20px;
+            padding: 5px;
+            border: none;
+            text-decoration: none;
+            width: 100px;
+            border-radius: 10px;
+            color: rgba(22, 19, 9,0.9);
+        
+        }
+        button:hover
+        {
+            cursor: pointer;
+        }
+        h1
+        {
+            margin: top 10px;
+            margin-bottom: 2px;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="one"> </h1>
+        <button id="b1" onclick='display("b1")'>JAVA</button>
+        <button id="b2"  onclick="display('b2')">JAVASCRIPT</button>
+        <button id="b3" onclick="display('b3')">PYTHON</button>
+
+    </div>
+    <script>
+        
+        function display(buttonId) {
+    let javatag = document.getElementById('one');
+    
+    if (buttonId === 'b1') {
+        javatag.textContent = "I LOVE JAVA";
+    } else if (buttonId === 'b2') {
+        javatag.textContent = "I LOVE JAVASCRIPT";
+    } else if (buttonId === 'b3') {
+        javatag.textContent = "I LOVE PYTHON";
+    } else {
+        javatag.textContent = ""; // Default case if none of the above
+    }
+}
+           
+        
+       
+        
+    </script>
+</body>
+</html>
