@@ -15,9 +15,14 @@
     </style>
 </head>
 <body>
+    <input type="number" id="patientId" name="patientId" required>
+    <input type="number" id="age" name="ages" required>
+
+
+
     <h1>Patient Information</h1>
 
-    <!-- Input field for patient ID -->
+   
     <label for="patientId">Enter Patient ID: </label>
     <input type="number" id="patientId" name="patientId" required>
     <button onclick="fetchPatientData()">Fetch Patient</button>
@@ -31,7 +36,7 @@
     </div>
 
     <script>
-        // Function to fetch patient data by ID
+     
         function fetchPatientData() {
             var patientId = document.getElementById("patientId").value;
             if (!patientId) {
@@ -43,11 +48,11 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data) {
-                        // Update the UI with the patient's details
+                     
                         document.getElementById("patient-name").innerText = data.name;
                         document.getElementById("patient-age").innerText = data.age;
                         if (data.image) {
-                            // If the image exists, decode it from Base64 and display
+                       
                             document.getElementById("patient-image").src = "data:image/png;base64," + data.image;
                         } else {
                             document.getElementById("patient-image").alt = "No image available";
