@@ -1,4 +1,3 @@
-
 //btnids
 let btn1 = document.getElementById('one');
 let btn2 = document.getElementById('two');
@@ -10,19 +9,10 @@ let btn5 = document.getElementById('five');
 let textdisplay = document.getElementById('txt');
 let textArea = document.getElementById('txtarea');
 
-
 // timer ids
 let mSecTag = document.getElementById('msec');
 let secTag = document.getElementById('sec');
 let minTag = document.getElementById('min');
-
-// let showmSecTag = document.getElementById('showmsec');
-// let showsecTag = document.getElementById('showsec');
-// let showminTag = document.getElementById('showmin');
-
-//    document.getElementById('restime').style.display='block';
-
-
 
 let count = 0;
 
@@ -46,7 +36,6 @@ textdisplay.addEventListener('dragstart', (event) => {
 textdisplay.addEventListener('copy', (event) => {
     event.preventDefault();
 
-
     const customMessage = "Copy-Paste 🤣🤣😉😂😂 You are be Fooled.... No Cheating ";
 
     // Set the custom message in the clipboard
@@ -55,10 +44,7 @@ textdisplay.addEventListener('copy', (event) => {
     } else if (window.clipboardData) {
         window.clipboardData.setData('Text', customMessage);
     }
-
-
 });
-
 
 btn2.addEventListener('click', function () {
     displayText = "Closed captions were created for deaf or hard of hearing individuals to assist in comprehension. They can also be used as a tool by those learning to read, learning to speak a non-native language, or in an environment where the audio is difficult to hear or is intentionally muted.";
@@ -67,10 +53,9 @@ btn2.addEventListener('click', function () {
 });
 
 btn1.addEventListener('click', function () {
-    displayText = "Learning keyboard shortcuts for common commands can significantly improve your typing efficiency. Practice using shortcuts for actions like copying, pasting, saving, and formatting text. Over time, these shortcuts will become second nature and save you valuable time.";
+    displayText = "This is trial Of Paragraph time.";
     textdisplay.innerText = displayText;
     textArea.addEventListener('input', change);
-
 });
 
 btn3.addEventListener('click', function () {
@@ -97,7 +82,6 @@ document.getElementById('nav').addEventListener('click', function () {
     window.location.href = 'https://www.instagram.com/chauhanviraj21';
 })
 
-
 function timer() {
     msec = msec + 1;
     if (msec == 100) {
@@ -106,7 +90,6 @@ function timer() {
         if (sec == 60) {
             min = min + 1;
             sec = 0;
-
         }
     }
     mSecTag.innerText = concatinate(msec);
@@ -197,20 +180,20 @@ function compareText() {
 
 
 
+
+
+
+
 function change() {
     if (!flag) startTimer();
 
     compareText();
 
+    // Check if the text is completely correct and reset the timer/placeholder
     if (displayText === textArea.value) {
-        // showmSecTag.innerText = msec;
-        // showminTag.innerText = min;
-        // showsecTag.innerText = sec;
-
-
         textArea.style.borderColor = 'white';
         textArea.value = "";
-        textArea.placeholder = `You take ${min} Minuts ${sec} Second ${msec} milisecond for that Para   `;
+        textArea.placeholder = `You took ${min} Minutes ${sec} Seconds ${msec} Milliseconds for that Paragraph`;
         console.log(textArea.placeholder);
         sec = 0;
         msec = 0;
@@ -226,11 +209,7 @@ function change() {
     }
 }
 
-
-
-
 function concatinate(time) {
     if (time <= 9) return "0" + time;
-
     else return time;
 }
